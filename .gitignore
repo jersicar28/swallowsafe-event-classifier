@@ -1,0 +1,49 @@
+# Data files (never commit research or participant data)
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.mat
+*.dat
+*.hea
+*.edf
+*.wav
+*.mp4
+*.mov
+*.json
+data/
+
+# Model checkpoints and saved fits
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.pickle
+*.h5
+*.npy
+*.npz
+artifacts*/
+models/
+checkpoints/
+
+# Large / generated files
+*.zip
+*.tar
+*.tar.gz
+figures/
+
+# Secrets and environment
+.env
+.env.*
+*.key
+credentials*.json
+
+# Python / notebooks / OS
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# Obsidian vault (never part of a repo)
+map/
+.obsidian/

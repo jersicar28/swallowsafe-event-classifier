@@ -1,7 +1,7 @@
 # swallowsafe-event-classifier
 
 ## Overview
-SwallowSafe classifies throat activity (talking, drinking/swallowing, coughing, laughing and rest) from three piezo sensors and a microphone sampled at 50 Hz. There are two approaches: a Random Forest on 5-second windows, and a causal 1D CNN that labels every 20 ms sample and can run in real time. Associated with the Figueroa Lab.
+SwallowSafe classifies throat activity (talking, drinking/swallowing, coughing, laughing and rest) from three sensors and a microphone sampled at 50 Hz. There are two approaches: a Random Forest on 5-second windows, and a causal 1D CNN that labels every 20 ms sample and can run in real time. Associated with the Figueroa Lab.
 
 ## Methods
 - `swallowsafe_classification.py` (Random Forest)
@@ -21,7 +21,7 @@ SwallowSafe classifies throat activity (talking, drinking/swallowing, coughing, 
   - Break makes up about 71% of samples.
   - Cough appears only in blocks 1–14 and 29, and Laugh only in blocks 15–28 and 30. The model may partly learn the session rather than the class, so Cough/Laugh scores are likely optimistic.
 
-Results: TODO: confirm. The code prints accuracy and macro-F1 at run time but stores no results.
+Results: The code prints accuracy and macro-F1 at run time but stores no results.
 
 ## Tools
 Python, PyTorch, SciPy, NumPy, pandas, scikit-learn, Matplotlib, seaborn, gspread (Google Sheets), Google Colab.
@@ -29,8 +29,8 @@ Python, PyTorch, SciPy, NumPy, pandas, scikit-learn, Matplotlib, seaborn, gsprea
 ## Status
 In progress.
 
-**Data:** not included. Recordings come from one participant, a member of the project team. **Some event labels were produced with AI assistance.** TODO: confirm how those labels were checked.
+**Data:** not included. Recordings come from one participant, a member of the project team. **Some event labels were produced with AI assistance and are being edited currently.** 
 
 **Paths:** Google Drive paths were replaced with placeholders under `/path/to/data/SwallowSafe/`.
 
-**Notes:** The `.py` files are exports of Google Colab notebooks. Lines starting with `!` (and the bare `pip install` line, where present) are notebook shell commands, and `drive.mount(...)` calls are Colab-only. Run the files cell by cell in a notebook, not as plain scripts. `swallowsafe_1d_cnn.py` calls `load_blocks_from_drive_sheets_by_name`, which was defined in a notebook cell not included in this export (TODO).
+**Notes:** The `.py` files are exports of Google Colab notebooks. Lines starting with `!` (and the bare `pip install` line, where present) are notebook shell commands, and `drive.mount(...)` calls are Colab-only. Run the files cell by cell in a notebook, not as plain scripts. `swallowsafe_1d_cnn.py` calls `load_blocks_from_drive_sheets_by_name`, which was defined in a notebook cell not included in this export.
